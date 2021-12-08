@@ -11,7 +11,7 @@ export default function Cats({}) {
   const history = useHistory();
 
   useEffect(async () => {
-    const res = await axios.get("hhttps://tuwaiq-projectcat.herokuapp.com/cats", {
+    const res = await axios.get("https://cats-tuwaiqb.herokuapp.com/cats", {
       headers: { authorization: `Bearer ${token}`  },
     });
     setCats(res.data);
@@ -21,7 +21,7 @@ export default function Cats({}) {
 
   const deleteCats = async (id, index)=>{
    
-    const deletedCat = await axios.delete(`https://tuwaiq-projectcat.herokuapp.com/cat/${id}`,{
+    const deletedCat = await axios.delete(`https://cats-tuwaiqb.herokuapp.com/cat/${id}`,{
       headers:{authorization: "Bearer " + token},
     });
     console.log((deletedCat.data));
